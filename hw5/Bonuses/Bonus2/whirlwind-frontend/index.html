@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Whirlwind Interface</title>
+
+    <link rel="stylesheet" type="text/css" href="app.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script src="abi.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <h1>Whirlwind Interface</h1>
+
+    <section>
+      <h2>Deposit</h2>
+      <input type="text" id="proofDeposit" placeholder="Proof" />
+      <input type="text" id="newRoot" placeholder="New Root" />
+      <input type="text" id="commitment" placeholder="Commitment" />
+      <button onclick="deposit()">Deposit</button>
+    </section>
+
+    <section>
+      <h2>Withdraw</h2>
+      <input type="text" id="proofWithdraw" placeholder="Proof" />
+      <input type="text" id="nullifier" placeholder="Nullifier" />
+      <button onclick="withdraw()">Withdraw</button>
+    </section>
+
+    <section>
+      <h2>Merkle Root</h2>
+      <pre id="root">...</pre>
+    </section>
+
+    <section>
+      <h2>Deposit Events</h2>
+      <ul id="events"></ul>
+    </section>
+  </body>
+</html>

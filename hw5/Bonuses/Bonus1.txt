@@ -1,0 +1,19 @@
+Deposit Contract: "0xb2F56262F3ae8799Bda57Bfd9213B2142925081a"
+Withdraw Contract: "0x09d74586089ae780e67eDeacE05BBA028E49F174"
+Whirlwind Contract: "0x3A0B7955b9eCeAcc3EC022Acd884aE5691E52dac"
+
+Deposit Transaction:
+0x76a8950adb75e8cabcbeebc152c52043f40862b65850eff6866f8d64d6e9ccbe
+https://sepolia.etherscan.io/tx/0x76a8950adb75e8cabcbeebc152c52043f40862b65850eff6866f8d64d6e9ccbe
+
+Withdraw Transaction:
+0x4778131daa0928babb09c79c52ccf1b15c5e85f8c9768ec6f20acfa5dcab2aa4
+https://sepolia.etherscan.io/tx/0x4778131daa0928babb09c79c52ccf1b15c5e85f8c9768ec6f20acfa5dcab2aa4
+
+Modified Deployment Scripts:
+For deposit:
+echo "[\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{8\}//' | cut -c1-256)\"]"
+echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{264\}//')\""
+For withdraw:
+echo "[\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{8\}//' | cut -c1-128)\"]"
+echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{136\}//')\""
